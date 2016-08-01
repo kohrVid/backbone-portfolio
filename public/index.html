@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>My Amazing Fat Client Portfolio Builder</title>
+  <link rel="stylesheet" href="../app/assets/stylesheets/application.css">
+</head>
+
+<body>
+
+  <section id="navigation">
+  </section>
+
+  <section id="content">
+
+    <div id="bio">
+      <img src="uploads/me.jpg" width="200" height="200" alt="Dan Garland"
+      class="bio-image shadowed" />
+
+      <div class="bio-text">
+        <h1 class="name">Dan Garland</h1>
+
+        <h2 class="bio">
+          Freelance Ruby on Rails developer from London, UK
+        </h2>
+
+        <h3 class="mission">
+          Expressing creativity through innovative web development
+        </h3>
+      </div>
+    </div>
+
+    <div id="projects">
+      <h2>Recent Project Work</h2>
+
+      <ul id="project-list">
+        <li class="project">
+          <div class="sortable">
+          </div>
+
+          <div class="info">
+            <img src="uploads/project.jpg" width="350" height="165"
+            alt="My Amazing Project" class="project-image shadowed" />
+
+            <div class="project-details">
+              <h3 class="project-name">
+                Bucket List
+              </h3>
+
+              <input class="edit-title hidden-edit" placeholder="Enter a title">
+
+              <a href="http://bucketlist.herokuapp.com">
+                http://bucketlist.herokuapp.com
+              </a>
+
+              <div class="skills">
+                <span class="skill-label">
+                  Skills:
+                </span>
+
+                <ul class="skill-list">
+                  <li class="skill">
+                    <span class="name">Ruby</span>
+                    <span class="delete">Remove</span>
+                  </li>
+                  <li class="skill">
+                    <span class="name">Rails</span>
+                    <span class="delete">Remove</span>
+                  </li>
+                  <li class="skill">
+                    <span class="name">AJAX</span>
+                    <span class="delete">Remove</span>
+                  </li>
+                  <li class="skill">
+                    <span class="name">HTML 5</span>
+                    <span class="delete">Remove</span>
+                  </li>
+                  <li class="skill">
+                    <span class="name">CSS</span>
+                    <span class="delete">Remove</span>
+                  </li>
+                  <li class="skill">
+                    <span class="name">Javascript</span>
+                    <span class="delete">Remove</span>
+                  </li>
+                </ul>
+
+                <span class="add-skill">Add Skill</span>
+              </div>
+
+              <div class="body">
+                <ul>
+                  <li>I worked on a Ruby on Rails application that modelled a
+                  bucket list of travel destinations using AJAX, Cucumber, and
+                  JavaScript.</li>
+
+                  <li>The app uses Ruby Geocoder to pinpoint the user's destinations
+                  on a map.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="remove-project">
+            Remove Project
+          </div>
+          <div class="clear"></div>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <section id="footer">
+  </section>
+
+  <!-- Load application scripts at the end of the body, so that we
+  don't slow up the loading time of the DOM -->
+  <script src="../app/assets/javascripts/libs/jquery-3.1.0.js"></script>
+  <script src="../app/assets/javascripts/libs/underscore.js"></script>
+  <script src="../app/assets/javascripts/libs/backbone.js"></script>
+  <script src="../app/assets/javascripts/libs/backbone.localStorage.js"></script>
+  <script src="../app/assets/javascripts/app.js"></script>
+</body>
+
+</html>
