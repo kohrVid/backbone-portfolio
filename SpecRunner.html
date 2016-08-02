@@ -10,16 +10,31 @@
   <script src="spec/javascripts/helpers/jasmine-2.4.1/jasmine.js"></script>
   <script src="spec/javascripts/helpers/jasmine-2.4.1/jasmine-html.js"></script>
   <script src="spec/javascripts/helpers/jasmine-2.4.1/boot.js"></script>
+  <script id="user-bio-template" type="text/template">
+  <img src="<%= imageUrl %>" width="200" height="200" alt="<%= fullName%>"
+    class="bio-image shadowed" />
+
+    <div class="bio-text">
+      <h1 class="name"><%= fullName %></h1>
+
+      <h2 class="bio"><%= bio %></h2>
+
+      <h3 class="mission"><%= mission %></h3>
+    </div>
+  </script>
 
   <!-- TODO: include source files here... -->
   <script src="app/assets/javascripts/libs/underscore.js"></script>
+  <script src="app/assets/javascripts/libs/jquery-3.1.0.js"></script>
   <script src="app/assets/javascripts/libs/backbone.js"></script>
   <script src="app/assets/javascripts/app.js"></script>
   <script src="app/assets/javascripts/models/user.js"></script>
+  <script src="app/assets/javascripts/views/userView.js"></script>
 
   <!-- include spec files here... -->
   <script src="spec/javascripts/helpers/SpecHelper.js"></script>
   <script src="spec/javascripts/models/userSpec.js"></script>
+  <script src="spec/javascripts/views/userViewSpec.js"></script>
 
 </head>
 
