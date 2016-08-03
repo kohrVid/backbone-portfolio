@@ -11,18 +11,17 @@
   <script src="spec/javascripts/helpers/jasmine-2.4.1/jasmine-html.js"></script>
   <script src="spec/javascripts/helpers/jasmine-2.4.1/boot.js"></script>
   <script id="user-bio-template" type="text/template">
-  <img src="<%= imageUrl %>" width="200" height="200" alt="<%= fullName%>"
+  <img src="<%= model.get("imageUrl") %>" width="200" height="200" alt="<%= model.fullName() %>"
     class="bio-image shadowed" />
 
     <div class="bio-text">
-      <h1 class="name"><%= fullName %></h1>
+      <h1 class="name"><%= model.fullName() %></h1>
 
-      <h2 class="bio"><%= bio %></h2>
+      <h2 class="bio"><%= model.attributes.bio %></h2>
 
-      <h3 class="mission"><%= mission %></h3>
-    </div>
+      <h3 class="mission"><%= model.get("mission") %></h3>
+
   </script>
-
   <!-- TODO: include source files here... -->
   <script src="app/assets/javascripts/libs/underscore.js"></script>
   <script src="app/assets/javascripts/libs/jquery-3.1.0.js"></script>
