@@ -14,18 +14,30 @@
   </header>
 
   <main id="content">
-  <script id="user-bio-template" type="text/template">
-    <img src="<%= model.get("imageUrl") %>" width="200" height="200" alt="<%= model.fullName() %>"
-    class="bio-image shadowed" />
+  
+    <script id="user-bio-template" type="text/template">
+      <img src="<%= model.get("imageUrl") %>" width="200" height="200" alt="<%= model.fullName() %>" class="bio-image shadowed editable" />
+      <input type="text" placeholder="Image path" class="imageUrl hidden-edit" value="<%= model.get("imageUrl")%>" data-field-name="imageUrl">
+      <div class="bio-text">
+	<h1 class="name">
+	  <span id="edit-first-name" class="editable"><%= model.get("firstName") %></span>
+	  <input type="text" placeholder="First Name" class="firstName hidden-edit" value="<%= model.get("firstName")%>" data-field-name="firstName">
+	  <span id="edit-last-name" class="editable"> <%= model.get("lastName") %></span>
+	  <input type="text" placeholder="Last Name" class="lastName hidden-edit" value="<%= model.get("lastName")%>" data-field-name="lastName">
+	</h1>
 
-    <div class="bio-text">
-      <h1 class="name"><%= model.fullName() %></h1>
+	<h2 class="bio">
+	  <span id="edit-biography" class="editable"><%= model.get("bio") %></span>
+	  <input type="text" placeholder="Biography" class="biography hidden-edit" value="<%= model.get("bio")%>" data-field-name="bio">
+	</h2>
 
-      <h2 class="bio"><%= model.attributes.bio %></h2>
+	<h3 class="mission">
+	  <span id="edit-mission" class="editable"><%= model.get("mission") %></span>
+	  <input type="text" placeholder="Mission" class="hidden-edit" value="<%= model.get("mission")%>" data-field-name="mission">
+	</h3>
+      </div>
 
-      <h3 class="mission"><%= model.get("mission") %></h3>
-
-  </script>
+    </script>
 
     <section id="projects">
       <h2>Recent Project Work</h2>

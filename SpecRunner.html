@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Jasmine Spec Runner v2.4.1</title>
+  <head>
+    <meta charset="utf-8">
+    <title>Jasmine Spec Runner v2.4.1</title>
 
-  <link rel="shortcut icon" type="image/png" href="spec/javascripts/helpers/jasmine-2.4.1/jasmine_favicon.png">
-  <link rel="stylesheet" href="spec/javascripts/helpers/jasmine-2.4.1/jasmine.css">
+    <link rel="shortcut icon" type="image/png" href="spec/javascripts/helpers/jasmine-2.4.1/jasmine_favicon.png">
+    <link rel="stylesheet" href="spec/javascripts/helpers/jasmine-2.4.1/jasmine.css">
 
-  <script src="spec/javascripts/helpers/jasmine-2.4.1/jasmine.js"></script>
-  <script src="spec/javascripts/helpers/jasmine-2.4.1/jasmine-html.js"></script>
-  <script src="spec/javascripts/helpers/jasmine-2.4.1/boot.js"></script>
-  <script id="user-bio-template" type="text/template">
-  <img src="<%= model.get("imageUrl") %>" width="200" height="200" alt="<%= model.fullName() %>"
-    class="bio-image shadowed" />
+    <script src="spec/javascripts/helpers/jasmine-2.4.1/jasmine.js"></script>
+    <script src="spec/javascripts/helpers/jasmine-2.4.1/jasmine-html.js"></script>
+    <script src="spec/javascripts/helpers/jasmine-2.4.1/boot.js"></script>
+    
+    <script id="user-bio-template" type="text/template">
+      <img src="<%= model.get("imageUrl") %>" width="200" height="200" alt="<%= model.fullName() %>" class="bio-image shadowed editable" />
+      <input type="text" placeholder="Image path" class="imageUrl hidden-edit" value="<%= model.get("imageUrl")%>" data-field-name="imageUrl">
+      <div class="bio-text">
+	<h1 class="name">
+	  <span id="edit-first-name" class="editable"><%= model.get("firstName") %></span>
+	  <input type="text" placeholder="First Name" class="firstName hidden-edit" value="<%= model.get("firstName")%>" data-field-name="firstName">
+	  <span id="edit-last-name" class="editable"> <%= model.get("lastName") %></span>
+	  <input type="text" placeholder="Last Name" class="lastName hidden-edit" value="<%= model.get("lastName")%>" data-field-name="lastName">
+	</h1>
 
-    <div class="bio-text">
-      <h1 class="name"><%= model.fullName() %></h1>
+	<h2 class="bio">
+	  <span id="edit-biography" class="editable"><%= model.get("bio") %></span>
+	  <input type="text" placeholder="Biography" class="biography hidden-edit" value="<%= model.get("bio")%>" data-field-name="bio">
+	</h2>
 
-      <h2 class="bio"><%= model.attributes.bio %></h2>
+	<h3 class="mission">
+	  <span id="edit-mission" class="editable"><%= model.get("mission") %></span>
+	  <input type="text" placeholder="Mission" class="hidden-edit" value="<%= model.get("mission")%>" data-field-name="mission">
+	</h3>
+      </div>
 
-      <h3 class="mission"><%= model.get("mission") %></h3>
+    </script>
 
-  </script>
-  <!-- TODO: include source files here... -->
-  <script src="app/assets/javascripts/libs/underscore.js"></script>
-  <script src="app/assets/javascripts/libs/jquery-3.1.0.js"></script>
-  <script src="app/assets/javascripts/libs/backbone.js"></script>
-  <script src="app/assets/javascripts/app.js"></script>
-  <script src="app/assets/javascripts/models/user.js"></script>
-  <script src="app/assets/javascripts/views/userView.js"></script>
+    <!-- TODO: include source files here... -->
+    <script src="app/assets/javascripts/libs/underscore.js"></script>
+    <script src="app/assets/javascripts/libs/jquery-3.1.0.js"></script>
+    <script src="app/assets/javascripts/libs/backbone.js"></script>
+    <script src="app/assets/javascripts/libs/backbone.localStorage.js"></script>
+    <script src="app/assets/javascripts/app.js"></script>
+    <script src="app/assets/javascripts/models/user.js"></script>
+    <script src="app/assets/javascripts/views/userView.js"></script>
 
-  <!-- include spec files here... -->
-  <script src="spec/javascripts/helpers/SpecHelper.js"></script>
-  <script src="spec/javascripts/models/userSpec.js"></script>
-  <script src="spec/javascripts/views/userViewSpec.js"></script>
+    <!-- include spec files here... -->
+    <script src="spec/javascripts/helpers/SpecHelper.js"></script>
+    <script src="spec/javascripts/models/userSpec.js"></script>
+    <script src="spec/javascripts/views/userViewSpec.js"></script>
 
-</head>
+  </head>
 
-<body>
-</body>
+  <body>
+    <div id="fixtures" style="position: absolute; top: 1em;"></div>
+  </body>
 </html>
