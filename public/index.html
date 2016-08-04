@@ -39,83 +39,86 @@
 
     </script>
 
-    <section id="projects">
-      <h2>Recent Project Work</h2>
+    <script type="text/template">
 
-      <ul id="project-list">
-        <li class="project">
-          <div class="sortable">
-          </div>
+      <section id="projects">
+	<h2>Recent Project Work</h2>
 
-          <div class="info">
-            <img src="uploads/project.jpg" width="350" height="165"
-            alt="My Amazing Project" class="project-image shadowed" />
+	<ul id="project-list">
+	  <li class="project">
+	    <div class="sortable">
+	    </div>
 
-            <div class="project-details">
-              <h3 class="project-name">
-                Bucket List
-              </h3>
+	    <div class="info">
+	      <img src="uploads/project.jpg" width="350" height="165"
+	      alt="My Amazing Project" class="project-image shadowed" />
 
-              <input class="edit-title hidden-edit" placeholder="Enter a title">
+	      <div class="project-details">
+		<h3 class="project-name">
+		  Bucket List
+		</h3>
 
-              <a href="http://bucketlist.herokuapp.com">
-                http://bucketlist.herokuapp.com
-              </a>
+		<input class="edit-title hidden-edit" placeholder="Enter a title">
 
-              <div class="skills">
-                <span class="skill-label">
-                  Skills:
-                </span>
+		<a href="http://bucketlist.herokuapp.com">
+		  http://bucketlist.herokuapp.com
+		</a>
 
-                <ul class="skill-list">
-                  <li class="skill">
-                    <span class="name">Ruby</span>
-                    <span class="delete">Remove</span>
-                  </li>
-                  <li class="skill">
-                    <span class="name">Rails</span>
-                    <span class="delete">Remove</span>
-                  </li>
-                  <li class="skill">
-                    <span class="name">AJAX</span>
-                    <span class="delete">Remove</span>
-                  </li>
-                  <li class="skill">
-                    <span class="name">HTML 5</span>
-                    <span class="delete">Remove</span>
-                  </li>
-                  <li class="skill">
-                    <span class="name">CSS</span>
-                    <span class="delete">Remove</span>
-                  </li>
-                  <li class="skill">
-                    <span class="name">Javascript</span>
-                    <span class="delete">Remove</span>
-                  </li>
-                </ul>
+		<div class="skills">
+		  <span class="skill-label">
+		    Skills:
+		  </span>
 
-                <span class="add-skill">Add Skill</span>
-              </div>
+		  <ul class="skill-list">
+		    <li class="skill">
+		      <span class="name">Ruby</span>
+		      <span class="delete">Remove</span>
+		    </li>
+		    <li class="skill">
+		      <span class="name">Rails</span>
+		      <span class="delete">Remove</span>
+		    </li>
+		    <li class="skill">
+		      <span class="name">AJAX</span>
+		      <span class="delete">Remove</span>
+		    </li>
+		    <li class="skill">
+		      <span class="name">HTML 5</span>
+		      <span class="delete">Remove</span>
+		    </li>
+		    <li class="skill">
+		      <span class="name">CSS</span>
+		      <span class="delete">Remove</span>
+		    </li>
+		    <li class="skill">
+		      <span class="name">Javascript</span>
+		      <span class="delete">Remove</span>
+		    </li>
+		  </ul>
 
-              <div class="body">
-                <ul>
-                  <li>I worked on a Ruby on Rails application that modelled a
-                  bucket list of travel destinations using AJAX, Cucumber, and
-                  JavaScript.</li>
+		  <span class="add-skill">Add Skill</span>
+		</div>
 
-                  <li>The app uses Ruby Geocoder to pinpoint the user's destinations
-                  on a map.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+		<div class="body">
+		  <ul>
+		    <li>I worked on a Ruby on Rails application that modelled a
+		    bucket list of travel destinations using AJAX, Cucumber, and
+		    JavaScript.</li>
 
-          <div class="remove-project">
-            Remove Project
-          </div>
-          <div class="clear"></div>
-        </li>
-      </ul>
+		    <li>The app uses Ruby Geocoder to pinpoint the user's destinations
+		    on a map.</li>
+		  </ul>
+		</div>
+	      </div>
+	    </div>
+
+	    <div class="remove-project">
+	      Remove Project
+	    </div>
+	    <div class="clear"></div>
+	  </li>
+	</ul>
+      </section>
 
     </script>
   </main>
@@ -130,11 +133,15 @@
   <script src="../app/assets/javascripts/libs/backbone.js"></script>
   <script src="../app/assets/javascripts/libs/backbone.localStorage.js"></script>
   <script src="../app/assets/javascripts/app.js"></script>
-  <!-- TODO: include source files here... -->
   <script src="../app/assets/javascripts/models/user.js"></script>
+  <script src="../app/assets/javascripts/collections/userList.js"></script>
   <script src="../app/assets/javascripts/views/userView.js"></script>
-
+  <script src="../app/assets/javascripts/views/homeView.js"></script>
+  <script src="../app/assets/javascripts/controllers/usersController.js"></script>
+  <script src="../app/assets/javascripts/views/userListView.js"></script>
+  <script src="../app/assets/javascripts/views/userShowView.js"></script>
   <script src="../app/assets/javascripts/boot.js"></script>
+
 </body>
 
 </html>
