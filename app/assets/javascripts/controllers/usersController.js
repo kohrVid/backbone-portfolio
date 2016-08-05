@@ -3,7 +3,16 @@ app.controllers.UsersController = Backbone.Router.extend({
     "": "home",
     "root": "home",
     "users": "index",
+    "users/new": "new",
     "users/:id": "show"
+  },
+
+  new: function() {
+//    var users = new app.collections.UserList();
+  //  users.fetch();
+    var user = new app.models.User();
+    var view = new app.views.UserNewView({ model: user });
+    $("main#content").html(view.render().el);
   },
 
   show: function(id) {
@@ -20,11 +29,6 @@ app.controllers.UsersController = Backbone.Router.extend({
 
     var view = new app.views.UserListView({ collection: users });
     $("main#content").html(view.render().el);
-
-    //1. Write a jasmine test for the UserListView page that takes a collection of users nd displays a ul/li list of users avatars (thumbnail and fullname)
-    //2. Add a show link to each user so that I can click on it and display an individual user
-    //3. Add a show action to this controller that loads the given users by its ID
-    //4. Add a new action so that I can fill in a blank user and save them to the localStorage.
   },
 
   home: function () {

@@ -35,6 +35,24 @@
 
     </script>
 
+    <script id="new-user-template" type="text/template">
+      <div>
+	<h1>Add A New User</h1>
+	  <strong>First Name:</strong>
+	  <input type="text" placeholder="First Name" id="firstName" value="" data-field-name="firstName">
+	  <strong>Last Name:</strong>
+	  <input type="text" placeholder="Last Name" id="lastName" value="" data-field-name="lastName">
+	  <strong>Image URL:</strong>
+	  <input type="text" placeholder="Image URL" id="imageUrl" value="" data-field-name="imageUrl">
+	  <strong>Biography:</strong>
+	  <input type="text" placeholder="Biography" id="bio" value="" data-field-name="bio">
+	  <strong>Mission:</strong>
+	  <input type="text" placeholder="Mission" id="mission" value="" data-field-name="mission">
+	  <input type="submit" value="submit" class="submit">
+      </div>
+
+    </script>
+
     <!-- TODO: include source files here... -->
     <script src="app/assets/javascripts/libs/underscore.js"></script>
     <script src="app/assets/javascripts/libs/jquery-3.1.0.js"></script>
@@ -48,6 +66,7 @@
     <script src="app/assets/javascripts/collections/userList.js"></script>
     <script src="app/assets/javascripts/views/userListView.js"></script>
     <script src="app/assets/javascripts/views/userShowView.js"></script>
+    <script src="app/assets/javascripts/views/userNewView.js"></script>
 
     <!-- include spec files here... -->
     <script src="spec/javascripts/helpers/SpecHelper.js"></script>
@@ -55,6 +74,7 @@
     <script src="spec/javascripts/views/userViewSpec.js"></script>
     <script src="spec/javascripts/views/userListViewSpec.js"></script>
     <script src="spec/javascripts/views/userShowViewSpec.js"></script>
+    <script src="spec/javascripts/views/userNewViewSpec.js"></script>
 
   </head>
 

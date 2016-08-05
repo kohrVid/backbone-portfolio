@@ -27,6 +27,7 @@ describe("UserListView", function () {
     userList.create(user1);
     userList.create(user2);
     userList.fetch();
+  //  userList.sync();
     view = new app.views.UserListView({ collection: userList });
     rendered = view.render();
   });
@@ -35,5 +36,13 @@ describe("UserListView", function () {
     expect(rendered.$el.html()).toContain("img");
     expect(rendered.$el.html()).toContain("/uploads/tim.jpg");
     expect(rendered.$el.html()).toContain("/uploads/ada.jpg");
+  });
+
+  it("should display a link to a user's show page", function () {
+    expect(rendered.$el.html()).toMatch('href="#users/' +  user2.get("id") + '"');
+  });
+
+  it("should display a link to the new user page", function () {
+    expect(rendered.$el.html()).toContain('href="#users/new"');
   });
 });

@@ -5,7 +5,9 @@ app.views.UserListView = Backbone.View.extend({
     var users = this.collection.models;
   //  };
     
-    this.$el.html("<h1>User List</h1><ul>");
+    this.$el.html("<h1>User List</h1>");
+    this.$el.append('<p><strong><a href="#users/new">Add new user</a></strong></p><ul>');
+
     for (var i = 0; i < users.length; i++) {
       this.$el.append('<li>');
       this.$el.append('<strong><a id="' + users[i].get("id") +'" href="#users/' + users[i].get("id") +'">' + users[i].fullName() + '</a></strong>');
