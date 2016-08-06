@@ -20,6 +20,8 @@ app.views.UserNewView = Backbone.View.extend({
       mission: mission
     });
     user.save();
+    var controller = new app.controllers.UsersController();
+    controller.navigate("root", { trigger: true });
   },
 
   render: function () {

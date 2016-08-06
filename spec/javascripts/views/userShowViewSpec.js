@@ -1,10 +1,11 @@
 var rendered;
 var userList;
-var rendered;
 var user1;
 var user2;
+var view;
 describe("UserShow", function () {
   beforeEach(function () {
+    /* TODO - Remove later?
     user1 = new app.models.User({
       firstName: "Tim",
       lastName: "Berners Lee",
@@ -12,7 +13,7 @@ describe("UserShow", function () {
       bio: "I invented the internet (sort of)!",
       mission: "Our mission is to make information freely available to all...I think"
     });
-    
+    */
     user2 = new app.models.User({
       firstName: "Ada",
       lastName: "Lovelace",
@@ -20,11 +21,11 @@ describe("UserShow", function () {
       bio: "First programmer",
       mission: "To make awesome calculators and not go insane!"
     });
-    user1.save();
+  //  user1.save();
     user2.save();
 
-    userList = new app.collections.UserList();
-    userList.create(user1);
+  //  userList = new app.collections.UserList();
+  //  userList.create(user1);
     userList.create(user2);
     userList.fetch();
     view = new app.views.UserListView({ collection: userList });
@@ -35,8 +36,9 @@ describe("UserShow", function () {
     user2.save();*/
     var user_id = "#" + user2.get("id");
     $(user_id).trigger("click");
-     view2 = new app.views.UserShowView({ model: user2 });
-     rendered = view2.render();
+//    view2 = new app.views.UserShowView({ model: user2 });
+    view2 = new app.views.UserView({ model: user2 });
+    rendered = view2.render();
   });
 
   it("should display the user's first name", function () {

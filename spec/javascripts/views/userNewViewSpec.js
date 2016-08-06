@@ -3,7 +3,7 @@ var view;
 var user;
 describe("UserNew", function () {
   beforeEach(function () {
-    user = new app models.User();
+    user = new app.models.User();
     view = new app.views.UserNewView({ model: user });
     rendered = view.render();
   });
