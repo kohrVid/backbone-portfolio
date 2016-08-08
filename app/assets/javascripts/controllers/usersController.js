@@ -16,17 +16,22 @@ app.controllers.UsersController = Backbone.Router.extend({
 
   show: function(id) {
     var user = new app.models.User({ id: id });
-    user.fetch();
-    var view = new app.views.UserView({ model: user });
-    $("main#content").html(view.render().el);
+    user.fetch({
+      success: function (user) {
+	var view = new app.views.UserView({ model: user });
+	$("main#content").html(view.render().el);
+      }
+    });
   },
 
   index: function () {
     var users = new app.collections.UserList();
-    users.fetch();
-
-    var view = new app.views.UserListView({ collection: users });
-    $("main#content").html(view.render().el);
+    users.fetch({
+      success: function (users) {
+	var view = new app.views.UserListView({ collection: users });
+	$("main#content").html(view.render().el);
+      }
+    });
   },
 
   home: function () {

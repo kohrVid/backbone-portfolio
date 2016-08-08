@@ -6,6 +6,7 @@ app.views.UserView = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.model, "change", this.render);
   },
+
   events: {
     "dblclick .editable": "edit",
     "change .hidden-edit": "update"
@@ -28,7 +29,9 @@ app.views.UserView = Backbone.View.extend({
       model: this.model
     };
     this.$el.html(this.template(scope));
-    var projectListView = new app.views.ProjectListView({ collection: this.model.projects, model: this.model });
+    var projectListView = new app.views.ProjectListView({
+      collection: this.model.projects, model: this.model 
+    });
     this.$el.find("#projects").append(projectListView.render().el);
     return this;
   }

@@ -1,5 +1,5 @@
 app.collections.UserList = Backbone.Collection.extend({
-//  localStorage: new Backbone.LocalStorage("users"),
+  url: "http://localhost:3000/users",
   model: app.models.User,
 /*  initialize: function () {
     this.fetch();
