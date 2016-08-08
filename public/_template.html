@@ -1,0 +1,12 @@
+<script id="user-bio-template" type="text/template">
+  <img src="<%= model.get("imageUrl") %>" width="200" height="200" alt="<%= model.fullName() %>" class="bio-image shadowed" />
+
+  <div class="bio-text">
+    <h1 class="name"><%= model.fullName() %></h1>
+
+    <h2 class="bio"><%= model.attributes.bio %></h2>
+
+    <h3 class="mission"><%= model.get("mission") %></h3>
+  </div>
+
+</script>
