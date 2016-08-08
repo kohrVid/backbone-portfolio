@@ -1,4 +1,5 @@
-app.views.ProjectView = Backbone.View.extend({
+app.views.ProjectView = EditableView.extend({
+  tagName: "li",
   template: _.template($(".project").html()),
 
   initialize: function () {
@@ -6,8 +7,6 @@ app.views.ProjectView = Backbone.View.extend({
   },
 
   events: {
-    "dblclick .editable": "edit",
-    "change input.hidden-edit": "update",
     "click .remove-project": "delete"
   },
 
@@ -16,18 +15,6 @@ app.views.ProjectView = Backbone.View.extend({
 	  model: this.model
     }));
     return this;
-  },
-
-  edit: function (event) {
-    $(event.currentTarget).next().show();
-    $(event.currentTarget).hide();
-  },
-
-  update: function (event) {
-    var attribute = $(event.currentTarget).data("field-name");
-    this.model.set(attribute, event.currentTarget.value);
-    this.model.save();
-    $(".hidden-edit").hide();
   },
 
   delete: function (event) {
