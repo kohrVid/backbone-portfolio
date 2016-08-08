@@ -19,7 +19,6 @@ app.controllers.UsersController = Backbone.Router.extend({
     user.fetch();
     var view = new app.views.UserView({ model: user });
     $("main#content").html(view.render().el);
-//    $("main#content").append(projectList.render().el);
   },
 
   index: function () {

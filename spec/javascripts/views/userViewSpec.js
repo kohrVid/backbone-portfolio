@@ -1,6 +1,7 @@
 describe("UserView", function () {
   var user;
   var view;
+  var rendered;
   beforeEach(function () {
     user = new app.models.User({
       firstName: "Tim",

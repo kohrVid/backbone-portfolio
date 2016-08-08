@@ -19,7 +19,7 @@ app.views.UserView = Backbone.View.extend({
     };
     this.$el.html(this.template(scope));
     var projectListView = new app.views.ProjectListView({ collection: this.model.projects, model: this.model });
-    this.$el.append(projectListView.render().el);
+    this.$el.find("#projects").append(projectListView.render().el);
     return this;
   },
 

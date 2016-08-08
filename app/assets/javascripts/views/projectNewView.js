@@ -11,12 +11,12 @@ app.views.ProjectNewView = Backbone.View.extend({
   save: function (event) {
     var title = $(event.currentTarget).find("input[data-field-name=title]").val();
     var repoUrl = $(event.currentTarget).find("input[data-field-name=repoUrl]").val();
-    var imageUrl = $(event.currentTarget).find("input[data-field-name=imageUrl]").val();
+    var imageUrl = $(event.currentTarget).find("input[data-field-name=projectImageUrl]").val();
     var body = $(event.currentTarget).find("input[data-field-name=body]").val();
     var userId = this.model.id;
     var project = this.model.projects.create({
       title: title, repoUrl: repoUrl,
-      imageUrl: imageUrl, body: body
+      projectImageUrl: projectImageUrl, body: body
     });
     project.save();
     var controller = new app.controllers.UsersController();

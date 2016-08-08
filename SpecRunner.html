@@ -33,8 +33,9 @@
 	</h3>
       </div>
 
-      <div class="user-projects">
-      </div>
+    /*  <!--div class="user-projects"-->
+      </div>*/
+      <section id="projects"></section>
 
     </script>
 
@@ -58,28 +59,31 @@
 
     </script>
 
-    <script type="text/template" id="project-list">
+    <script type="text/template" id="projectList">
       <section>
 	<h2>Recent Project Work</h2>
 	<span id="new-project">Add a new project</span>
-	<ul class="sortable">
+	<ul id="project-list">
 	</ul>
       </section>
     </script>
 
     <script type="text/template" class="project">
-      <li>
+      <li id="<%= model.get("id") %>" class="sortable">
 	<div class="info">
-	  <img src="<%= model.get("imageUrl")  %>" width="350" height="165"
-	  alt="<%= model.get("title") %>" class="project-image shadowed" />
+	  <img src="<%= model.get("projectImageUrl") %>" width="350" height="165"
+	  alt="<%= model.get("title") %>" class="project-image shadowed" data-field-name="projectImageUrl" />
 
 	  <div class="project-details">
-	    <h3 class="project-name"><%= model.get("title") %></h3>
+	    <h3 class="project-name editable"><%= model.get("title") %></h3>
 	    <input class="edit-title hidden-edit" placeholder="Enter a title">
+	    <input type="text" placeholder="Title" class="hidden-edit" value="<%= model.get("title")%>" data-field-name="title">
 
-	    <a href="<%= model.get("repoUrl") %>"><%= model.get("repoUrl") %></a>
+	    <a href="<%= model.get("repoUrl") %>" class="repoUrl editable"><%= model.get("repoUrl") %></a>
+	    <input type="text" placeholder="Repo URL" class="hidden-edit" value="<%= model.get("repoUrl")%>" data-field-name="repoUrl">
 
-	    <div class="body"><%= model.get("body") %></div>
+	    <div class="body editable"><%= model.get("body") %></div>
+	    <input type="text" placeholder="Body" class="hidden-edit" value="<%= model.get("body")%>" data-field-name="body">
 
 	    <div class="remove-project">
 	      Remove Project
@@ -99,7 +103,7 @@
 	  <strong>Repo URL:</strong>
 	  <input type="text" placeholder="Repo URL" id="repoUrl" value="" data-field-name="repoUrl">
 	  <strong>Image URL:</strong>
-	  <input type="text" placeholder="Image URL" id="imageUrl" value="" data-field-name="imageUrl">
+	  <input type="text" placeholder="Image URL" id="projectImageUrl" value="" data-field-name="projectImageUrl">
 	  <strong>Body:</strong>
 	  <input type="text" placeholder="Body" id="body" value="" data-field-name="body">
 	  <input type="submit" value="submit" class="submit">
@@ -107,7 +111,6 @@
       </div>
 
     </script>
-
 
     <!-- TODO: include source files here... -->
     <script src="app/assets/javascripts/libs/underscore.js"></script>

@@ -1,5 +1,9 @@
 app.views.ProjectListView = Backbone.View.extend({
-  template: _.template($('#project-list').html()),
+  template: _.template($('#projectList').html()),
+  initialize: function () {
+    this.listenTo(this.collection, "remove", this.render);
+  },
+
   events: {
     "dblclick #new-project": "newProjectLink"
   },
@@ -8,7 +12,7 @@ app.views.ProjectListView = Backbone.View.extend({
     var _this = this;
     _.each(this.collection.models, function (projectItem){
       var projectView = new app.views.ProjectView({ model: projectItem });
-      _this.$el.find(".sortable").append(projectView.render().el);
+      _this.$el.find("#project-list").append(projectView.render().el);
     });
     return this;
   },
