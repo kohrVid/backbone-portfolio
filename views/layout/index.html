@@ -5,7 +5,9 @@
   <meta charset="utf-8">
   <title>My Amazing Fat Client Portfolio Builder</title>
   <!--link rel="stylesheet" href="app/assets/stylesheets/application.css"-->
-  <link rel="stylesheet" href="/assets/application.css">
+  <!--link rel="stylesheet" href="/assets/application.css"-->
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 </head>
 
 <body>
@@ -37,6 +39,8 @@
 	</h3>
       </div>
 
+    /*  <!--div class="user-projects"-->
+      </div>*/
       <section id="projects"></section>
 
     </script>
@@ -119,8 +123,7 @@
 
   <!-- Load application scripts at the end of the body, so that we
   don't slow up the loading time of the DOM -->
-  <script src="/assets/application.js"></script>
-  <!--script src="../app/assets/javascripts/libs/jquery-3.1.0.js"></script>
+  <script src="../app/assets/javascripts/libs/jquery-3.1.0.js"></script>
   <script src="../app/assets/javascripts/libs/underscore.js"></script>
   <script src="../app/assets/javascripts/libs/backbone.js"></script>
   <script src="../app/assets/javascripts/libs/backbone.localStorage.js"></script>
@@ -139,7 +142,7 @@
   <script src="../app/assets/javascripts/views/projectListView.js"></script>
   <script src="../app/assets/javascripts/views/projectView.js"></script>
   <script src="../app/assets/javascripts/views/projectNewView.js"></script>
-  <script src="../app/assets/javascripts/boot.js"></script-->
+  <script src="../app/assets/javascripts/boot.js"></script>
 
 </body>
 
