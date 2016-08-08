@@ -48,6 +48,12 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    jasmine (2.4.0)
+      jasmine-core (~> 2.4)
+      phantomjs
+      rack (>= 1.2.1)
+      rake
+    jasmine-core (2.4.1)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -66,6 +72,7 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     pg (0.18.4)
+    phantomjs (2.1.1.0)
     pkg-config (1.1.7)
     puma (3.6.0)
     rack (2.0.1)
@@ -132,6 +139,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  jasmine
   listen (~> 3.0.5)
   pg (~> 0.18)
   puma (~> 3.0)
