@@ -1,0 +1,14 @@
+<h1>User List</h1>
+<p>
+  <strong><a href="#users/new">Add new user</a></strong>
+</p>
+
+<ul>
+  <% for (var i = 0; i < users.length; i++) { %>
+    <li>
+    <img src="<%= users[i].get("imageUrl") %>">
+    <strong><a id="<%= users[i].get("id") %>" href="#users/<%= users[i].get("id") %>"> <%= users[i].fullName() %></a></strong>
+    </li>
+  <% } %>
+</ul>
+

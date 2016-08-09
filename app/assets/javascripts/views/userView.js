@@ -1,6 +1,6 @@
 app.views.UserView = Backbone.View.extend({
   tagName: 'section',
-  template: _.template($('#user-bio-template').html()),
+ // template: _.template($('#user-bio-template').html()),
   id: 'bio',
 
   initialize: function () {
@@ -11,6 +11,8 @@ app.views.UserView = Backbone.View.extend({
     "dblclick .editable": "edit",
     "change .hidden-edit": "update"
   },
+
+  template: JST["templates/user"],
 
   edit: function (event) {
     $(event.currentTarget).next().show();

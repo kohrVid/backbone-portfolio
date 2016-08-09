@@ -1,9 +1,10 @@
 app.views.UserNewView = Backbone.View.extend({
-  template: _.template($('#new-user-template').html()),
+//  template: _.template($('#new-user-template').html()),
 /*initialize: function () {
     this.listenTo(this.model, "submit", this.render);
   },
 */
+  template: JST["templates/userNew"],
   events: {
     "submit": "save"
   },

@@ -1,6 +1,7 @@
 // = require libs/jquery-3.1.0
 // = require libs/underscore
 // = require_tree ./libs
+// = require_tree ./templates
 // = require app
 // = require_tree ./models
 // = require_tree ./collections

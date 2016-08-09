@@ -1,5 +1,5 @@
 app.views.ProjectNewView = Backbone.View.extend({
-  template: _.template($('#new-project-template').html()),
+  template: JST["templates/projectNew"],
 /*initialize: function () {
     this.listenTo(this.model, "submit", this.render);
   },

@@ -1,6 +1,6 @@
 app.views.ProjectView = Backbone.View.extend({
   tagName: "li",
-  template: _.template($(".project").html()),
+  template: JST["templates/project"],
   id: "project",
 
   initialize: function () {
@@ -34,8 +34,6 @@ app.views.ProjectView = Backbone.View.extend({
   delete: function (event) {
     var user = new app.models.User({ id: this.model.attributes.userId });
     this.model.destroy();
-  /*  var usersController = new app.controllers.UsersController();
-    usersController.show(user.id);*/
   }
 
 });

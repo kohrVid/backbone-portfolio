@@ -1,5 +1,5 @@
 app.views.ProjectListView = Backbone.View.extend({
-  template: _.template($('#projectList').html()),
+  template: JST["templates/projectList"],
   initialize: function () {
     this.listenTo(this.collection, "remove", this.render);
   },
