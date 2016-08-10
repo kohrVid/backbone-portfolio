@@ -1,17 +1,17 @@
 <div class="info">
-  <img src="<% { model.get("projectImageUrl") } %> " width="350" height="165"
-  alt="<% { model.get("title") } %>" class="project-image shadowed editable" data-field-name="projectImageUrl" />
+  <img src="<%= model.get("projectImageUrl") %> " width="350" height="165"
+  alt="<%= model.get("title") %>" class="project-image shadowed editable" data-field-name="projectImageUrl" />
 
   <div class="project-details">
-    <h3 class="project-name editable"><% { model.get("title") || "Click to add title" } %></h3>
+    <h3 class="project-name editable"><%= model.get("title") || "Click to add title" %></h3>
     <input class="edit-title hidden-edit" placeholder="Enter a title">
-    <input type="text" placeholder="Title" class="hidden-edit" value="<% { model.get("title") }%>" data-field-name="title">
+    <input type="text" placeholder="Title" class="hidden-edit" value="<%= model.get("title") %>" data-field-name="title">
 
-    <a href="<% { model.get("repoUrl") } %>" class="repoUrl editable"><% { model.get("repoUrl") || "Click to add URL" } %></a>
-    <input type="text" placeholder="Repo URL" class="hidden-edit" value="<% { model.get("repoUrl") } %>" data-field-name="repoUrl">
+    <a href="<%= model.get("repoUrl")  %>" class="repoUrl editable"><%= model.get("repoUrl") || "Click to add URL" %></a>
+    <input type="text" placeholder="Repo URL" class="hidden-edit" value="<%= model.get("repoUrl")  %>" data-field-name="repoUrl">
 
-    <div class="body editable"><% { model.get("body") || "Click to add body" } %></div>
-    <input type="text" placeholder="Body" class="hidden-edit" value="<% { model.get("body") } %>" data-field-name="body">
+    <div class="body editable"><%= model.get("body") || "Click to add body" %></div>
+    <input type="text" placeholder="Body" class="hidden-edit" value="<%= model.get("body") %>" data-field-name="body">
 
     <div class="remove-project">
       Remove Project

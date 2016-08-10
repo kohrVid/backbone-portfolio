@@ -3,15 +3,20 @@ app.controllers.UsersController = Backbone.Router.extend({
     "": "home",
     "root": "home",
     "users": "index",
-    "users/new": "new",
+    "users/new": "newUser",
     "users/:id": "show",
+  //  "users/": "create",
     "users/:id/projects/new": "newProject"
   },
 
-  new: function() {
+  newUser: function() {
     var user = new app.models.User();
-    var view = new app.views.UserNewView({ model: user });
-    $("main#content").html(view.render().el);
+//    user.fetch({
+  //    error: function (user) {
+	var view = new app.views.UserNewView({ model: user });
+	$("main#content").html(view.render().el);
+//      }
+  //  });
   },
 
   show: function(id) {
@@ -35,9 +40,6 @@ app.controllers.UsersController = Backbone.Router.extend({
   },
 
   home: function () {
-    //load any data (if necessary)
-    
-    //select a view to display as the output
     var view = new app.views.HomeView();
     $("main#content").html(view.render().el);
   },

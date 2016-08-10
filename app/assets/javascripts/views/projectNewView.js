@@ -5,9 +5,9 @@ app.views.ProjectNewView = Backbone.View.extend({
   },
 */
   events: {
-    "submit": "save"
+//    "submit": "save"
   },
-
+/*
   save: function (event) {
     var title = $(event.currentTarget).find("input[data-field-name=title]").val();
     var repoUrl = $(event.currentTarget).find("input[data-field-name=repoUrl]").val();
@@ -22,7 +22,7 @@ app.views.ProjectNewView = Backbone.View.extend({
     var controller = new app.controllers.UsersController();
     controller.navigate(["users", userId].join("/"), { trigger: true });
   },
-
+*/
   render: function () {
     var scope = {
       model: this.model

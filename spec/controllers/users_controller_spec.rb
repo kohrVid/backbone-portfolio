@@ -26,7 +26,7 @@ RSpec.describe UsersController, type: :controller do
       expect(json[0]["firstName"]).to_not be_nil
       expect(json[0]["lastName"]).to_not be_nil
     end
-
+    
     describe "GET UserView" do
       before do
 	@user = User.first
@@ -41,12 +41,28 @@ RSpec.describe UsersController, type: :controller do
       it "should render valid JSON" do
 	expect(lambda{ JSON(response.body) }).to_not raise_error
 	json = JSON(response.body)
-	expect(json.length).to eq(1)
-	expect(json[0]["firstName"]).to_not be_nil
-	expect(json[0]["lastName"]).to_not be_nil
-	expect(json[0]["firstName"]).to eq(@user.first_name)
-	expect(json[0]["lastName"]).to eq(@user.last_name)
+	expect(json["firstName"]).to_not be_nil
+	expect(json["lastName"]).to_not be_nil
+	expect(json["firstName"]).to eq(@user.first_name)
+	expect(json["lastName"]).to eq(@user.last_name)
       end
     end
+=begin
+    describe "GET UsersNew" do
+      before do
+	@user = User.new
+	get :new, format: :json
+      end
+
+      it "should respond with some JSON of the form" do
+	expect(response.content_type).to eq("application/json")
+	expect(response.status).to eq(200)
+      end
+
+      it "should render valid JSON" do
+	expect(lambda { JSON(response.body) }).to_not raise_error
+      end
+    end
+=end
   end
 end
