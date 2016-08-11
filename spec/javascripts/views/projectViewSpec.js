@@ -196,6 +196,13 @@ describe("Project View", function () {
 	    expect(rendered.$el.find("input.hidden-edit:visible").length).toBe(0);
 	  });
 	});
+
+	describe("Adding new skills",function () {
+	  beforeEach(function () {
+	    var addButton = $("#addSkill");
+	    addButton.trigger("click");
+	  }):
+	});
       });
     });
 

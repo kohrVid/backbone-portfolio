@@ -1,6 +1,6 @@
 app.views.UserNewView = Backbone.View.extend({
   initialize: function () {
-      this.listenTo(this.model, "submit", this.render);
+      this.listenTo(this.model, "save", this.render);
   },
 
   template: JST["templates/userNew"],
@@ -9,7 +9,7 @@ app.views.UserNewView = Backbone.View.extend({
   },
 
   save: function () {
-    var firstName = $("input[data-field-name=firstName]").val();
+/*    var firstName = $("input[data-field-name=firstName]").val();
     var lastName = $("input[data-field-name=lastName]").val();
     var imageUrl = $("input[data-field-name=imageUrl]").val();
     var bio = $("input[data-field-name=bio]").val();
@@ -20,6 +20,8 @@ app.views.UserNewView = Backbone.View.extend({
       mission: mission
     });
     user.save();
+*/
+    $("#add-new-user").submit();
     /*
     var controller = new app.controllers.UsersController();
     controller.navigate("root", { trigger: true });

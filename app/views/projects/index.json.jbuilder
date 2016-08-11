@@ -6,3 +6,4 @@ json.array! @projects do |project|
   json.projectImageUrl project.image_url
   json.userId project.user_id
 end
+

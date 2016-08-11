@@ -2,15 +2,15 @@
   <h1>Add A New Project</h1>
   <form action="/projects" accept-charset="UTF-8" data-remote="true" method="POST" id="add-new-project">
     <input name="utf8" value="✓" type="hidden">
-    <input name="projects[userId]" type="hidden" value="<%= model.get("id") %>">
+    <input name="project[user_id]" type="hidden" value="<%= model.get("id") %>">
     <strong>Title:</strong>
-    <input type="text" placeholder="Title" id="title" value="" name="projects[title]" data-field-name="title">
+    <input type="text" placeholder="Title" id="title" value="" name="project[title]" data-field-name="title">
     <strong>Repo URL:</strong>
-    <input type="text" placeholder="Repo URL" id="repoUrl" value="" name="projects[repo_url]" data-field-name="repoUrl">
+    <input type="text" placeholder="Repo URL" id="repoUrl" value="" name="project[repo_url]" data-field-name="repoUrl">
     <strong>Image URL:</strong>
-    <input type="text" placeholder="Image URL" id="projectImageUrl" name="projects[image_url]" value="" data-field-name="projectImageUrl">
+    <input type="text" placeholder="Image URL" id="projectImageUrl" name="project[image_url]" value="" data-field-name="projectImageUrl">
     <strong>Body:</strong>
-    <input type="text" placeholder="Body" id="body" value="" name="projects[body]" data-field-name="body">
+    <input type="text" placeholder="Body" id="body" value="" name="project[body]" data-field-name="body">
     <input type="submit" name="commit" value="submit" class="submit">
   </form>
 </div>

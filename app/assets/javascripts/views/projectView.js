@@ -7,7 +7,20 @@ app.views.ProjectView = Backbone.View.extend({
     this.listenTo(this.model, "change", this.render);
   },
   events: {
+    "dblclick .editable": "edit",
     "click .remove-project": "delete"
+  },
+
+  edit: function (event) {
+    $(event.currentTarget).hide().next().show().focus();
+  },
+
+  update: function (event) {
+    var attribute = $(event.currentTarget).data("field-name");
+    this.model.set(attribute, event.currentTarget.value);
+    this.model.save();
+    $("form#project-view-form").submit();
+    $(".hidden-edit").hide();
   },
 
   render: function (){

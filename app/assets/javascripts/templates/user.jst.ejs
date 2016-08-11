@@ -1,23 +1,26 @@
-<img src="<%= model.get("imageUrl") %>" width="200" height="200" alt="<%= model.fullName() %>" class="bio-image shadowed editable" />
-<input type="text" placeholder="Image path" class="imageUrl hidden-edit" value="<%= model.get("imageUrl")%>" data-field-name="imageUrl">
-<div class="bio-text">
-  <h1 class="name">
-    <span id="edit-first-name" class="editable"><%= model.get("firstName") %></span>
-    <input type="text" placeholder="First Name" class="firstName hidden-edit" value="<%= model.get("firstName")%>" data-field-name="firstName">
-    <span id="edit-last-name" class="editable"> <%= model.get("lastName") %></span>
-    <input type="text" placeholder="Last Name" class="lastName hidden-edit" value="<%= model.get("lastName")%>" data-field-name="lastName">
-  </h1>
+<form action="/users/<%= model.get("id") %>" accept-charset="UTF-8" data-remote="true" method="POST" id="user-view-form">
+  <input name="_method" type="hidden" value="patch" />
+  <input name="utf8" value="✓" type="hidden">
+  <img src="<%= model.get("imageUrl") %>" width="200" height="200" alt="<%= model.fullName() %>" class="bio-image shadowed editable" />
+  <input type="text" placeholder="Image path" class="imageUrl hidden-edit" value="<%= model.get("imageUrl")%>" name="user[image_url]" data-field-name="imageUrl">
+  <div class="bio-text">
+    <h1 class="name">
+      <span id="edit-first-name" class="editable"><%= model.get("firstName") %></span>
+      <input type="text" placeholder="First Name" class="firstName hidden-edit" value="<%= model.get("firstName")%>" name="user[first_name]" data-field-name="firstName">
+      <span id="edit-last-name" class="editable"> <%= model.get("lastName") %></span>
+      <input type="text" placeholder="Last Name" class="lastName hidden-edit" value="<%= model.get("lastName")%>" name="user[last_name]" data-field-name="lastName">
+    </h1>
 
-  <h2 class="bio">
-    <span id="edit-biography" class="editable"><%= model.get("bio") %></span>
-    <input type="text" placeholder="Biography" class="biography hidden-edit" value="<%= model.get("bio")%>" data-field-name="bio">
-  </h2>
+    <h2 class="bio">
+      <span id="edit-biography" class="editable"><%= model.get("bio") %></span>
+      <input type="text" placeholder="Biography" class="biography hidden-edit" value="<%= model.get("bio")%>" name="user[bio]" data-field-name="bio">
+    </h2>
 
-  <h3 class="mission">
-    <span id="edit-mission" class="editable"><%= model.get("mission") %></span>
-    <input type="text" placeholder="Mission" class="hidden-edit" value="<%= model.get("mission")%>" data-field-name="mission">
-  </h3>
-</div>
-
+    <h3 class="mission">
+      <span id="edit-mission" class="editable"><%= model.get("mission") %></span>
+      <input type="text" placeholder="Mission" class="hidden-edit" value="<%= model.get("mission")%>" name="user[mission]" data-field-name="mission">
+    </h3>
+  </div>
+</form>
 <section id="projects"></section>
 

@@ -9,8 +9,7 @@ app.views.EditableView = Backbone.View.extend({
   },
 
   edit: function (event) {
-    $(event.currentTarget).next().show();
-    $(event.currentTarget).hide();
+    $(event.currentTarget).hide().next().show().focus();
   },
 
   update: function (event) {

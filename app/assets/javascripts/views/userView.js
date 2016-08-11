@@ -1,6 +1,5 @@
 app.views.UserView = Backbone.View.extend({
   tagName: 'section',
- // template: _.template($('#user-bio-template').html()),
   id: 'bio',
 
   initialize: function () {
@@ -9,6 +8,23 @@ app.views.UserView = Backbone.View.extend({
   },
   
   template: JST["templates/user"],
+  
+  events: {
+    "dblclick .editable": "edit",
+    "change .hidden-edit": "update"
+  },
+
+  edit: function (event) {
+    $(event.currentTarget).hide().next().show().focus();
+  },
+
+  update: function (event) {
+    var attribute = $(event.currentTarget).data("field-name");
+    this.model.set(attribute, event.currentTarget.value);
+    this.model.save();
+    $("form#user-view-form").submit();
+    $(".hidden-edit").hide();
+  },
   
   render: function () {
     var scope = {

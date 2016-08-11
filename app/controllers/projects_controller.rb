@@ -1,29 +1,32 @@
 class ProjectsController < ApplicationController
+  before_action :find_project, except: [:index, :create, :new]
+
   def index
-    sleep(3)
-    @projects = Project.all
+    @user = User.find(params[:user_id])
+    @projects = @user.projects
   end
 
   def create
-   # respond_to do |format|
-    #  format.json {
-	@project = Project.create(project_params)
- #     }
- #   end
-=begin
+    @project = Project.create(project_params)
     if @project.save
-      render {action: :show}
+      redirect_to :root #"#users/#{@project.user_id}"
     end
-=end
   end
 
   def show
-    @project = Project.find(params[:id])
+  end
+
+  def update
+    @project.update(project_params)
   end
 
   private
 
-  def project_params
-    params.require(:project).permit(:title, :body, :repo_url, :image_url, :user_id)
-  end
+    def find_project
+      @project = Project.find(params[:id])
+    end
+
+    def project_params
+      params.require(:project).permit(:title, :body, :repo_url, :image_url, :user_id)
+    end
 end
