@@ -2,7 +2,16 @@ class UsersController < ApplicationController
   before_action :find_user, except: [:index, :create, :new]
 
   def index
-    @users = User.all
+    if params[:ids]
+      @users = []
+	binding.pry
+
+      params[:ids].split(",").map(&:to_i).each do |user_id|
+	@users << User.find(user_id)
+      end
+    else
+      @users = User.all
+    end
   end
 
   def new

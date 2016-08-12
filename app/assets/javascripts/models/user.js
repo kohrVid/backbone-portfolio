@@ -3,6 +3,7 @@ app.models.User = Backbone.Model.extend({
 
   initialize: function () {
     this.projects = new app.collections.ProjectList();
+    this.followers = new app.collections.UserList();
     if (this.id) {
       this.projects.url = "http://localhost:3000/users/" + this.id + "/projects";
      // this.projects.url = "http://localhost:3000/projects";
@@ -11,6 +12,8 @@ app.models.User = Backbone.Model.extend({
     }
     this.listenTo(this.projects, "add", this.setUserId);
     this.listenTo(this, "sync", this.resetProjects);
+
+
   },
 
   fullName: function () {

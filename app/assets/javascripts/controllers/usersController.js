@@ -5,7 +5,6 @@ app.controllers.UsersController = Backbone.Router.extend({
     "users": "index",
     "users/new": "newUser",
     "users/:id": "show",
-  //  "users/": "create",
     "users/:id/projects/new": "newProject"
   },
 
